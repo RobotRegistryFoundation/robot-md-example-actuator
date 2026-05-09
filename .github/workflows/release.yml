@@ -75,3 +75,4 @@ jobs:
         with:
           packages-dir: dist/
           password: ${{ secrets.PYPI_TOKEN }}
+          attestations: false
