@@ -1,24 +1,27 @@
 ---
 name: using-robot-md-example-actuator
-description: When operating <hardware-class> via robot-md-gateway, this skill teaches Claude how to use the robot-md-example-actuator actuator. Triggers on actuating <hardware-class>.
-hardware_tags: ["{{ hardware_tag_1 }}", "{{ hardware_tag_2 }}"]
-manifest_signals: ["{{ signal_1 }}"]
+description: Minimal example actuator that demonstrates the robot-md actuator package layout. Anchors the cookbook beat 6 demo. Does not move physical hardware.
+hardware_tags: ["example", "tutorial"]
+manifest_signals: []
 ---
 
 # robot-md-example-actuator
 
 ## Purpose
-Minimal example actuator that demonstrates the robot-md actuator package layout. Does not move physical hardware. See https://robotmd.dev/cookbook/ for usage.
+
+This is a no-op example actuator. It exists to anchor the
+[robotmd.dev cookbook](https://robotmd.dev/cookbook/) beat 6 demo
+(discover/install) without requiring readers to have specific hardware.
 
 ## Capabilities exposed
-{% for capability in capabilities %}
-- `{{ capability.tool_name }}` — {{ capability.description }}
-{% endfor %}
+
+None. This actuator does not move hardware.
 
 ## Safety boundaries
-{{ safety_notes }}
+
+Cannot drive any physical device. Calls into this actuator return immediately
+with a stub response. For real drivers, see [/case-studies/](https://robotmd.dev/case-studies/).
 
 ## Prompts that should call this actuator
-{% for prompt in prompts %}
-- "{{ prompt }}"
-{% endfor %}
+
+None — this is a tutorial fixture, not a runtime actuator.
