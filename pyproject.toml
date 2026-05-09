@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "robot-md-example-actuator"
+version = "0.1.0"
+description = "Minimal example actuator that demonstrates the robot-md actuator package layout. Does not move physical hardware. See https://robotmd.dev/cookbook/ for usage."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "craigm26", email = "craigm26@gmail.com" },
+]
+dependencies = [
+    "robot-md-gateway>=0.5.0a1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.entry-points."robot_md_gateway.actuators"]
+robot-md-example-actuator = "robot_md_example_actuator.actuator:RobotMdExampleActuatorActuator"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/robot_md_example_actuator"]

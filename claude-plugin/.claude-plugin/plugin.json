@@ -1,0 +1,6 @@
+{
+  "name": "robot-md-example-actuator",
+  "description": "Minimal example actuator that demonstrates the robot-md actuator package layout. Does not move physical hardware. See https://robotmd.dev/cookbook/ for usage.",
+  "version": "0.1.0",
+  "author": "craigm26 <craigm26@gmail.com>"
+}
