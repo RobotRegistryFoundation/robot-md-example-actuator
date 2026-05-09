@@ -24,3 +24,8 @@ robot-md-example-actuator = "robot_md_example_actuator.actuator:RobotMdExampleAc
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/robot_md_example_actuator"]
+
+[tool.hatch.metadata]
+# Force metadata 2.1 so twine doesn't emit license-file which confuses
+# the PyPI upload API on older metadata versions.
+core-metadata-version = "2.1"
